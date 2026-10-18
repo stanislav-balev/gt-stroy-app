@@ -207,7 +207,7 @@ function draw(){
     const st=[["Площ",v("area")?v("area")+" м²":""],["Етажи",v("floors")],["Срок",v("time")],[v("type").includes("сграда")?"Апартаменти":"Помещения",v("units")]];
     const sh=stats(st,P,y-140,W-2*P);y-=sh+30;
     if(v("fact")){ctx.fillStyle=C.sand;ctx.font=`600 30px ${B}`;ctx.fillText("▸ "+v("fact"),P,y);y-=58;}
-    ctx.fillStyle="rgba(255,255,255,.8)";ctx.font=`500 32px ${B}`;ctx.fillText([v("type"),v("place")].filter(Boolean).join(" · "),P,y);y-=34;
+    ctx.fillStyle="rgba(255,255,255,.8)";ctx.font=`500 32px ${B}`;ctx.fillText([v("type"),v("place")].filter(Boolean).join(" · "),P,y);y-=72;
     ctx.fillStyle=C.white;ctx.font=`800 70px ${D}`;
     const lines=[];{const words=v("title").split(" ");let l="";for(const w of words){const t=l?l+" "+w:w;if(ctx.measureText(t).width>W-2*P&&l){lines.push(l);l=w}else l=t}if(l)lines.push(l);}
     lines.slice(0,2).reverse().forEach((l,i)=>ctx.fillText(l,P,y-i*82));
